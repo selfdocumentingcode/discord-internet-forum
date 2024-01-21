@@ -8,12 +8,14 @@
     "start:11ty": "pnpm exec eleventy --serve",
     "start:css": "postcss ./src/styles/main.css -o ./_site/styles.css --watch",
     "build": "set NODE_ENV=production && pnpm run clean && pnpm run build:css && pnpm run build:11ty",
-    "build:11ty": "pnpm exec eleventy --pathprefix /forum/",
+    "build:11ty": "pnpm exec eleventy --pathprefix /discord-internet-forum/",
     "build:css": "postcss ./src/styles/main.css -o ./_site/styles.css",
     "clean": "rimraf ./_site",
+    "clean2": "rimraf ./node_modules/.cache",
     "debug": "set DEBUG=Eleventy* && pnpm exec eleventy --serve",
     "deploy": "pnpm run build && pnpm run deploy:gh",
-    "deploy:gh": "gh-pages --dist _site --message Deploy --no-history"
+    "deploy:gh": "gh-pages --dist _site --message Deploy --no-history",
+    "deploy:clean": "gh-pages-clean"
   },
   "keywords": [],
   "author": "iwrite@selfdocumentingco.de",
