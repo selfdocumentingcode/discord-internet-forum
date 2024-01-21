@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <UserSecretsId>d7f68693-3834-4603-8fcc-56af2d0d3e2d</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DSharpPlus" Version="5.0.0-nightly-01947" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="5.0.0-nightly-01907" />
+    <PackageReference Include="DSharpPlus.Interactivity" Version="5.0.0-nightly-01907" />
+    <PackageReference Include="DSharpPlus.SlashCommands" Version="5.0.0-nightly-01947" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Extensions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Systemd" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+    <PackageReference Include="PuppeteerSharp" Version="10.1.4" />
+    <PackageReference Include="Scriban" Version="5.9.1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="ZooIds" Version="0.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DifBot.Common\DifBot.Common.csproj" />
+    <ProjectReference Include="..\DifBot.Data\DifBot.Data.csproj" />
+  </ItemGroup>
+</Project>

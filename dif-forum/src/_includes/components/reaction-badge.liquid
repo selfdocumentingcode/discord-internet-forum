@@ -1,0 +1,17 @@
+<div class="badge my-0 mr-1 h-7 gap-2 bg-gray-100 px-2">
+  {% case reaction.postReactionType %}
+    {% when "DiscordEmojiReaction" %}
+      <img
+        class="h-4 w-4 text-base leading-none"
+        src="{{ reaction.emoji.imageUrl }}"
+        alt="{{ reaction.emoji.name }}"
+      >
+    {% when "UnicodeEmojiReaction" %}
+      <img
+        class="h-4 w-4 text-base leading-none"
+        src="{{ reaction.emoji.imageUrl }}"
+        alt="{{ reaction.emoji.codePoint }}"
+      >
+  {% endcase %}
+  <span class="">{{ reaction.count }}</span>
+</div>

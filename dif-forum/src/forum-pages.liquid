@@ -1,0 +1,43 @@
+---
+pagination:
+    data: forums
+    size: 1
+    alias: forum
+permalink: "/{{ forum.name }}/"
+layout: base.liquid
+---
+<div class="w-full">
+  <div class="breadcrumbs h-10 bg-base-300 px-4">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="{{forum.name}}">{{ forum.displayName }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="bg-base-200 py-4 md:px-4">
+    <h1 class="mb-6 mt-2 text-2xl">{{ forum.displayName }}</h1>
+    <div class="flex justify-between bg-secondary px-4 py-4 text-secondary-content">
+      <div>Threads</div>
+      <div class="basis-20 text-center">Replies</div>
+    </div>
+    <div class="bg-base-100">
+      <ul>
+        {% assign forumThreads = threads | where: "forumChannelId", forum.discordChannelId %}
+        {% for thread in forumThreads %}
+          <li class="flex h-20 justify-between border-b p-4">
+            <div class="flex items-center">
+              <div class="px-2">
+                {% assign iconParams = "{ 'size' : '48' }" | toObject %}
+                {% lucide "messages-square" iconParams %}
+              </div>
+              <a class="px-2 text-xl" href="{{thread.originalPost.title | slugify}}">{{ thread.originalPost.title }}</a>
+            </div>
+            <div class="basis-20 text-center">{{ thread.replyPosts.size }}</div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
